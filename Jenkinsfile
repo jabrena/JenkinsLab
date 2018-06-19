@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh './mvnw --version'
+                bat './mvnw --version'
             }
         }
     }
