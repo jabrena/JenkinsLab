@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.Assert.fail;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
@@ -13,4 +15,14 @@ public class DemoApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void foo(){
+		fail("Catakroker jenkins");
+		try{
+			//execute code that you expect not to throw Exceptions.
+		}
+		catch(Exception e){
+			fail("Should not have thrown any exception");
+		}
+	}
 }
