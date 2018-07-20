@@ -1,25 +1,12 @@
 pipeline {
     agent {
-            docker { image 'openjdk:8-jre-alpine' }
+        docker { image 'node:7-alpine' }
     }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                bat './mvnw clean test'
+                sh 'node --version'
             }
-        }
-        stage('postActions') {
-            steps {
-                bat '''
-                echo "hello"
-                echo "world"
-                '''
-            }
-        }
-    }
-    post {
-        always {
-            junit 'target/**/*.xml'
         }
     }
 }
